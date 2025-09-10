@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Julia Flowers | Products</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+	<body>
+		<!-- Header / Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+			<div class="container">
+				<a class="navbar-brand fw-bold" href="../index.html">Julia Flowers</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+						<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<li class="nav-item">
+							<a class="nav-link position-relative" href="cart.html">
+								<span>Cart</span>
+								<span class="badge rounded-pill bg-warning text-dark ms-1" id="cart-count">0</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header class="py-5 bg-light border-bottom">
+			<div class="container d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3">
+				<div>
+					<h1 class="display-6 mb-0">Our Products</h1>
+					<p class="text-secondary mb-0">Browse bouquets, houseplants, and accessories.</p>
+				</div>
+				<form class="d-flex gap-2" role="search" id="productSearchForm">
+					<input class="form-control" type="search" placeholder="Search products" aria-label="Search" id="productSearchInput" />
+					<select class="form-select" id="categoryFilter">
+						<option value="all" selected>All categories</option>
+						<option value="bouquets">Bouquets</option>
+						<option value="houseplants">Houseplants</option>
+						<option value="accessories">Accessories</option>
+					</select>
+					<button class="btn btn-primary" type="submit">Filter</button>
+				</form>
+			</div>
+		</header>
+
+		<main class="py-5">
+			<div class="container">
+				<div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3" id="productList">
+					<!-- Bouquets -->
+					<div class="col" data-category="bouquets" data-title="Rose Bliss">
+						<div class="card h-100">
+							<img src="../images/rose_bliss.png" class="card-img-top" alt="Rose Bliss" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Rose Bliss</h5>
+								<p class="card-text text-secondary">A timeless bouquet of red and pink roses.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$49</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="rose_bliss" data-title="Rose Bliss" data-price="49" data-image="../images/rose_bliss.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="bouquets" data-title="Sunny Daisies">
+						<div class="card h-100">
+							<img src="../images/sunny_daisies.png" class="card-img-top" alt="Sunny Daisies" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Sunny Daisies</h5>
+								<p class="card-text text-secondary">Cheery daisies to brighten any day.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$35</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="sunny_daisies" data-title="Sunny Daisies" data-price="35" data-image="../images/sunny_daisies.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="bouquets" data-title="Lavender Dream">
+						<div class="card h-100">
+							<img src="../images/lavender_dream.png" class="card-img-top" alt="Lavender Dream" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Lavender Dream</h5>
+								<p class="card-text text-secondary">Soft hues with a calming scent profile.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$42</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="lavender_dream" data-title="Lavender Dream" data-price="42" data-image="../images/lavender_dream.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Houseplants -->
+					<div class="col" data-category="houseplants" data-title="Monstera Deliciosa">
+						<div class="card h-100">
+							<img src="../images/monstera_deliciosa.png" class="card-img-top" alt="Monstera Deliciosa" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Monstera Deliciosa</h5>
+								<p class="card-text text-secondary">Statement plant with iconic split leaves.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$59</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="monstera_deliciosa" data-title="Monstera Deliciosa" data-price="59" data-image="../images/monstera_deliciosa.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="houseplants" data-title="Snake Plant">
+						<div class="card h-100">
+							<img src="../images/snake_plant.png" class="card-img-top" alt="Snake Plant" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Snake Plant</h5>
+								<p class="card-text text-secondary">Low-maintenance, air-purifying favorite.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$29</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="snake_plant" data-title="Snake Plant" data-price="29" data-image="../images/snake_plant.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="houseplants" data-title="Peace Lily">
+						<div class="card h-100">
+							<img src="../images/peace_lily.png" class="card-img-top" alt="Peace Lily" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Peace Lily</h5>
+								<p class="card-text text-secondary">Graceful foliage with white blooms.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$32</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="peace_lily" data-title="Peace Lily" data-price="32" data-image="../images/peace_lily.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Accessories -->
+					<div class="col" data-category="accessories" data-title="Glass Vase">
+						<div class="card h-100">
+							<img src="../images/glass_vase.png" class="card-img-top" alt="Glass Vase" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Glass Vase</h5>
+								<p class="card-text text-secondary">Classic cylindrical vase for arrangements.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$15</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="glass_vase" data-title="Glass Vase" data-price="15" data-image="../images/glass_vase.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="accessories" data-title="Plant Mister">
+						<div class="card h-100">
+							<img src="../images/plant_mister.png" class="card-img-top" alt="Plant Mister" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Plant Mister</h5>
+								<p class="card-text text-secondary">Fine mist for humidity-loving plants.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$12</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="plant_mister" data-title="Plant Mister" data-price="12" data-image="../images/plant_mister.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col" data-category="accessories" data-title="Pruning Shears">
+						<div class="card h-100">
+							<img src="../images/pruning_shears.png" class="card-img-top" alt="Pruning Shears" />
+							<div class="card-body d-flex flex-column">
+								<h5 class="card-title">Pruning Shears</h5>
+								<p class="card-text text-secondary">Precision trimming for healthy growth.</p>
+													<div class="mt-auto d-flex justify-content-between align-items-center">
+														<span class="fw-bold">$18</span>
+														<button class="btn btn-outline-primary btn-sm add-to-cart" data-id="pruning_shears" data-title="Pruning Shears" data-price="18" data-image="../images/pruning_shears.png">Add to cart</button>
+													</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer bg-dark text-light mt-5 pt-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-md-4">
+						<h5>Julia Flowers</h5>
+						<p class="text-light-emphasis">123 Bloom Street, Springfield<br/>+1 (555) 123-4567<br/>hello@juliaflowers.com</p>
+					</div>
+					<div class="col-md-4">
+						<h5>Hours</h5>
+						<ul class="list-unstyled text-light-emphasis">
+							<li>Mon-Fri: 9am - 6pm</li>
+							<li>Sat: 10am - 4pm</li>
+							<li>Sun: Closed</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h5>Newsletter</h5>
+						<form class="d-flex gap-2" novalidate>
+							<input type="email" class="form-control" placeholder="Your email" required />
+							<button class="btn btn-primary" type="submit">Subscribe</button>
+						</form>
+					</div>
+				</div>
+				<div class="border-top border-secondary-subtle mt-4 pt-3 d-flex justify-content-between align-items-center small text-light-emphasis">
+					<span>© <span id="year"></span> Julia Flowers. All rights reserved.</span>
+					<span>Made with ❤️ from a camping cafeteria</span>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script src="../js/script.js"></script>
+	</body>
+	</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Julia Flowers | My Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">Julia Flowers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="cart.html">
+                <span>Cart</span>
+                <span class="badge rounded-pill bg-warning text-dark ms-1" id="cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-5 bg-light border-bottom">
+      <div class="container d-flex align-items-end justify-content-between gap-3">
+        <div>
+          <h1 class="display-6 mb-0">My Cart</h1>
+          <p class="text-secondary mb-0">Review your items and proceed to checkout.</p>
+        </div>
+        <button class="btn btn-outline-danger" id="clearCartBtn">Clear cart</button>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <div class="container">
+        <div id="cartContainer" class="row g-4">
+          <!-- JS renders cart items here -->
+        </div>
+        <div class="mt-4 d-flex justify-content-between align-items-center">
+          <a href="products.html" class="btn btn-outline-primary">Continue shopping</a>
+          <div class="d-flex align-items-center gap-3">
+            <div class="h5 mb-0">Total: <span id="cartTotal">$0</span></div>
+            <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light mt-5 pt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5>Julia Flowers</h5>
+            <p class="text-light-emphasis">123 Bloom Street, Springfield<br/>+1 (555) 123-4567<br/>hello@juliaflowers.com</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Hours</h5>
+            <ul class="list-unstyled text-light-emphasis">
+              <li>Mon–Fri: 9am – 6pm</li>
+              <li>Sat: 10am – 4pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Newsletter</h5>
+            <form class="d-flex gap-2" novalidate>
+              <input type="email" class="form-control" placeholder="Your email" required />
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="border-top border-secondary-subtle mt-4 pt-3 d-flex justify-content-between align-items-center small text-light-emphasis">
+          <span>© <span id="year"></span> Julia Flowers. All rights reserved.</span>
+          <span>Made with ❤️ from a camping cafeteria</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

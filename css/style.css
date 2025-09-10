@@ -1,0 +1,41 @@
+/* Julia Flowers custom styles */
+
+:root {
+	--jf-primary: #0d6efd; /* Bootstrap primary */
+}
+
+html, body {
+	scroll-behavior: smooth;
+}
+
+.hero-section .ratio {
+	background: linear-gradient(135deg, rgba(13,110,253,.08), rgba(25,135,84,.08));
+}
+
+.feature-card {
+	border: 1px solid var(--bs-border-color);
+}
+
+.category-card img,
+.card-img-top {
+	height: 600px;
+	object-fit: cover;
+}
+
+.navbar-brand {
+	letter-spacing: 0.5px;
+}
+
+.footer {
+	background-image: radial-gradient(1000px 300px at 80% 0, rgba(255,255,255,.05), transparent);
+}
+
+/* Active nav link helper */
+.nav-link.active {
+	font-weight: 600;
+}
+
+/* Product card spacing on small screens */
+@media (max-width: 576px) {
+	.card-img-top { height: 180px; }
+}
