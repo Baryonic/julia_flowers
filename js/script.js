@@ -5,6 +5,104 @@
 	const yearEl = document.getElementById('year');
 	if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+	// Houseplant and accessory image navigation
+	const houseplantImages = [
+		'monstera_deliciosa.png',
+		'peace_lily.png',
+		'snake_plant.png',
+		'lavender_dream.png',
+		'rose_bliss.png',
+		'sunny_daisies.png'
+	];
+	const accessoryImages = [
+		'glass_vase.png',
+		'plant_mister.png',
+		'pruning_shears.png'
+	];
+
+	let houseplantIdx = 0;
+	let accessoryIdx = 0;
+
+	const houseplantImg = document.getElementById('houseplant-img');
+	const houseplantPrev = document.getElementById('houseplant-prev');
+	const houseplantNext = document.getElementById('houseplant-next');
+
+	const accessoryImg = document.getElementById('accessory-img');
+	const accessoryPrev = document.getElementById('accessory-prev');
+	const accessoryNext = document.getElementById('accessory-next');
+
+	// Fade transition image swap with simple guard and preload
+	function swapImageWithFade(imgEl, newSrc) {
+		if (!imgEl) return;
+		const fullSrc = 'images/' + newSrc;
+		if (imgEl.getAttribute('src') === fullSrc) return;
+		if (imgEl.dataset.animating === '1') return;
+		imgEl.dataset.animating = '1';
+
+		const pre = new Image();
+		pre.onload = () => {
+			const onEnd = () => {
+				imgEl.removeEventListener('transitionend', onEnd);
+				imgEl.setAttribute('src', fullSrc);
+				// Next frame: fade back in
+				requestAnimationFrame(() => {
+					imgEl.classList.remove('is-fading');
+					imgEl.dataset.animating = '0';
+				});
+			};
+			imgEl.addEventListener('transitionend', onEnd);
+			// Start fade out
+			imgEl.classList.add('is-fading');
+		};
+		pre.src = fullSrc;
+	}
+
+	function updateHouseplantImg() {
+		swapImageWithFade(houseplantImg, houseplantImages[houseplantIdx]);
+	}
+	function updateAccessoryImg() {
+		swapImageWithFade(accessoryImg, accessoryImages[accessoryIdx]);
+	}
+
+	houseplantPrev?.addEventListener('click', function () {
+		houseplantIdx = (houseplantIdx - 1 + houseplantImages.length) % houseplantImages.length;
+		updateHouseplantImg();
+	});
+	houseplantNext?.addEventListener('click', function () {
+		houseplantIdx = (houseplantIdx + 1) % houseplantImages.length;
+		updateHouseplantImg();
+	});
+
+	accessoryPrev?.addEventListener('click', function () {
+		accessoryIdx = (accessoryIdx - 1 + accessoryImages.length) % accessoryImages.length;
+		updateAccessoryImg();
+	});
+	accessoryNext?.addEventListener('click', function () {
+		accessoryIdx = (accessoryIdx + 1) % accessoryImages.length;
+		updateAccessoryImg();
+	});
+
+	// Initialize: add fade class and set initial images
+	houseplantImg?.classList.add('img-fade');
+	accessoryImg?.classList.add('img-fade');
+	updateHouseplantImg();
+	updateAccessoryImg();
+
+	// Auto-advance every 5 seconds
+	const AUTO_MS = 5000;
+	if (houseplantImg) {
+		setInterval(() => {
+			houseplantIdx = (houseplantIdx + 1) % houseplantImages.length;
+			updateHouseplantImg();
+		}, AUTO_MS);
+	}
+	if (accessoryImg) {
+		setInterval(() => {
+			accessoryIdx = (accessoryIdx + 1) % accessoryImages.length;
+			updateAccessoryImg();
+		}, AUTO_MS);
+	}
+
 	// Active nav highlighting
 	const path = location.pathname.replace(/\\/g, '/');
 	document.querySelectorAll('.navbar .nav-link').forEach((link) => {

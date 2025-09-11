@@ -46,7 +46,7 @@
 					<div class="col-lg-6">
 						<div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
 							<!-- Placeholder image/video area -->
-							<img src="images/hero-placeholder.png" alt="Beautiful flower assortment" class="object-fit-cover w-100 h-100" />
+							<img src="images/flower_assortment.png" alt="Beautiful flower assortment" class="object-fit-cover w-100 h-100" />
 						</div>
 					</div>
 				</div>
@@ -98,7 +98,7 @@
 				<div class="row g-4 row-cols-1 row-cols-md-3">
 					<div class="col">
 						<div class="card h-100 category-card">
-							<img class="card-img-top" src="images/image1.png" alt="Bouquets" />
+							<img class="card-img-top" src="./images/flower_bouquet.png" alt="Bouquets" />
 							<div class="card-body">
 								<h5 class="card-title">Bouquets</h5>
 								<p class="card-text text-secondary">Hand-tied arrangements for every occasion.</p>
@@ -107,7 +107,13 @@
 					</div>
 					<div class="col">
 						<div class="card h-100 category-card">
-							<img class="card-img-top" src="images/image2.png" alt="Houseplants" />
+							<div class="category-image position-relative">
+								<img class="card-img-top" id="houseplant-img" src="images/monstera_deliciosa.png" alt="Houseplants" />
+								<div class="image-nav">
+									<button class="image-arrow" id="houseplant-prev" aria-label="Previous houseplant">&#8592;</button>
+									<button class="image-arrow" id="houseplant-next" aria-label="Next houseplant">&#8594;</button>
+								</div>
+							</div>
 							<div class="card-body">
 								<h5 class="card-title">Houseplants</h5>
 								<p class="card-text text-secondary">Greens that uplift any indoor space.</p>
@@ -116,7 +122,13 @@
 					</div>
 					<div class="col">
 						<div class="card h-100 category-card">
-							<img class="card-img-top" src="images/image3.png" alt="Accessories" />
+							<div class="category-image position-relative">
+								<img class="card-img-top" id="accessory-img" src="images/glass_vase.png" alt="Accessories" />
+								<div class="image-nav">
+									<button class="image-arrow" id="accessory-prev" aria-label="Previous accessory">&#8592;</button>
+									<button class="image-arrow" id="accessory-next" aria-label="Next accessory">&#8594;</button>
+								</div>
+							</div>
 							<div class="card-body">
 								<h5 class="card-title">Accessories</h5>
 								<p class="card-text text-secondary">Vases, misters, and tools to match your style.</p>

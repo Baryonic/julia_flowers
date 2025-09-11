@@ -1,7 +1,40 @@
 /* Julia Flowers custom styles */
 
 :root {
-	--jf-primary: #0d6efd; /* Bootstrap primary */
+	/* Theme: light, clean green */
+	--bs-primary: #2bb673;
+	--bs-primary-rgb: 43, 182, 115;
+	--bs-link-color: #229a61;
+	--bs-link-hover-color: #1b7f50;
+
+	/* Optional project var */
+	--jf-primary: #2bb673;
+}
+
+/* Button theme overrides */
+.btn-primary {
+	--bs-btn-color: #fff;
+	--bs-btn-bg: var(--jf-primary);
+	--bs-btn-border-color: var(--jf-primary);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #229a61; /* slightly darker */
+	--bs-btn-hover-border-color: #229a61;
+	--bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #1b7f50; /* even darker */
+	--bs-btn-active-border-color: #1b7f50;
+}
+
+.btn-outline-primary {
+	--bs-btn-color: var(--jf-primary);
+	--bs-btn-border-color: var(--jf-primary);
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: var(--jf-primary);
+	--bs-btn-hover-border-color: var(--jf-primary);
+	--bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #1b7f50;
+	--bs-btn-active-border-color: #1b7f50;
 }
 
 html, body {
@@ -9,7 +42,11 @@ html, body {
 }
 
 .hero-section .ratio {
-	background: linear-gradient(135deg, rgba(13,110,253,.08), rgba(25,135,84,.08));
+	background: linear-gradient(
+		135deg,
+		rgba(var(--bs-primary-rgb), .08),
+		rgba(var(--bs-primary-rgb), .14)
+	);
 }
 
 .feature-card {
@@ -21,6 +58,37 @@ html, body {
 	height: 600px;
 	object-fit: cover;
 }
+
+/* Overlay navigation arrows inside images */
+.category-image { position: relative; }
+.category-image { height: 600px; }
+.category-image img { display: block; width: 100%; height: 100%; }
+.image-nav {
+	position: absolute;
+	left: 0; right: 0; bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 8px;
+	pointer-events: none; /* allow clicks to pass except buttons */
+}
+.image-arrow {
+	background: rgba(0,0,0,0.45);
+	color: #fff;
+	border: none;
+	width: 36px; height: 36px;
+	border-radius: 999px;
+	line-height: 36px;
+	font-size: 18px;
+	cursor: pointer;
+	backdrop-filter: blur(2px);
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	pointer-events: auto;
+}
+.image-arrow:hover { background: rgba(0,0,0,0.6); }
+
+/* Fade transition for image swap */
+.img-fade { opacity: 1; transition: opacity 350ms ease; }
+.img-fade.is-fading { opacity: 0; }
 
 .navbar-brand {
 	letter-spacing: 0.5px;
@@ -38,4 +106,5 @@ html, body {
 /* Product card spacing on small screens */
 @media (max-width: 576px) {
 	.card-img-top { height: 180px; }
+	.category-image { height: 180px; }
 }
